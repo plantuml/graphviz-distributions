@@ -2,7 +2,7 @@
 
 Latest version: "https://github.com/plantuml/graphviz-distributions/raw/main/graphviz_lite_2.44.1.zip"
 
-Zip file with minimalistic graphviz dot.exe and the minimalistic set of needed .dll files. Just for plantuml and nothing else.
+Zip file with minimalistic graphviz dot.exe and the set of needed .dll files. Just for plantuml and nothing else.
 
 Set the local environment variable GRAPHVIZ_DOT to the position of the dot.exe file before starting plantuml.jar.  
 
