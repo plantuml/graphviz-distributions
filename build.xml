@@ -1,0 +1,26 @@
+<project name="GraphViz Lite" default="dist" basedir=".">
+  <description>
+	build a small GraphViz zip
+  </description>
+  <property name="version" value="2.44.1"/>
+  <property name="plantuml" location="plantuml.jar"/>
+  <property name="bin" location="GraphViz"/>
+  <property name="dist" location="dist"/>
+
+
+  <target name="test" description = "test small distribution">
+	<exec executable="setx.exe">
+		<arg line="GRAPHVIZ_DOT .\GraphViz\dot.exe"/>
+	</exec>	
+	<java jar="${plantuml}" fork="true" />
+  </target>
+
+  <target name="dist" description="generate the distribution">
+	<zip destfile="${dist}/graphviz_lite_${version}.zip" basedir="${bin}" />
+  </target>
+
+  <target name="clean"
+        description="clean up">
+    <delete dir="${dist}"/>
+  </target>
+</project>
