@@ -1,0 +1,52 @@
+@startuml
+
+file dot.exe
+component gvc.dll
+component gvplugin_dot_layout.dll
+component expat.dll
+component gvplugin_core.dll
+component vcruntime140.dll
+component cgraph.dll
+component pathplan.dll
+component xdot.dll
+component cdt.dll
+file config6
+
+dot.exe --> gvc.dll
+dot.exe --> cgraph.dll
+dot.exe --> vcruntime140.dll
+
+gvc.dll --> cgraph.dll
+gvc.dll --> pathplan.dll
+gvc.dll --> xdot.dll
+gvc.dll --> expat.dll
+gvc.dll --> cdt.dll
+gvc.dll --> vcruntime140.dll
+gvc.dll ..> config6 : loads plugins
+
+
+cgraph.dll --> cdt.dll
+cgraph.dll --> vcruntime140.dll
+
+expat.dll --> vcruntime140.dll
+
+pathplan.dll --> vcruntime140.dll
+
+xdot.dll --> vcruntime140.dll
+cdt.dll --> vcruntime140.dll
+
+gvplugin_core.dll --> gvc.dll
+gvplugin_core.dll --> cgraph.dll
+gvplugin_core.dll --> cdt.dll
+gvplugin_core.dll --> xdot.dll
+gvplugin_core.dll --> vcruntime140.dll
+config6 ..> gvplugin_core.dll : core plugin
+
+gvplugin_dot_layout.dll --> gvc.dll
+gvplugin_dot_layout.dll --> cgraph.dll
+gvplugin_dot_layout.dll --> cdt.dll
+gvplugin_dot_layout.dll --> vcruntime140.dll
+config6 ..> gvplugin_dot_layout.dll : dot plugin
+
+
+@enduml
