@@ -1,12 +1,15 @@
 # graphviz-distributions
 
-Latest version: "https://github.com/plantuml/graphviz-distributions/raw/main/graphviz_lite_2.44.1.zip"
+Latest version: "https://github.com/plantuml/graphviz-distributions/raw/main/graphviz_lite_22.46.0_win32.zip"
 
 Zip file with minimalistic graphviz dot.exe and the set of needed .dll files. Just for plantuml and nothing else.
 
-Set the local environment variable GRAPHVIZ_DOT to the position of the dot.exe file before starting plantuml.jar.  
+Set the local environment variable GRAPHVIZ_DOT to the position of the dot.exe file before starting plantuml.jar.
+
+**note**: plantuml V1.2020.21 and above inlcudes a graphviz lite distribution from here. It will be extracted to "%LOCALAPPDATA%\Temp\\_graphviz" IF plantuml doesn't find a dot.exe somewhere else. That means: if you have set the above environment variable GRAPHVIZ_DOT, plantuml uses this place for the dot.exe if there is one and doesn't extract the embedded distribution.
 
 root distribution can be found in https://www.graphviz.org (of course)
+
 License copied from --> https://gitlab.com/graphviz/graphviz/-/blob/master/LICENSE
 
 ## How to get there?
