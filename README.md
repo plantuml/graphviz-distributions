@@ -1,6 +1,6 @@
 # graphviz-distributions
 
-Latest version: "https://github.com/plantuml/graphviz-distributions/raw/main/graphviz_lite_22.46.0_win32.zip"
+Latest version: "https://github.com/plantuml/graphviz-distributions/raw/main/graphviz_lite_22.46.1_win32.zip"
 
 Zip file with minimalistic graphviz dot.exe and the set of needed .dll files. Just for plantuml and nothing else.
 
