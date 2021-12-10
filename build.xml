@@ -2,21 +2,40 @@
   <description>
 	build a small GraphViz zip
   </description>
-  <property name="version" value="22.46.0"/>
-  <property name="plantuml" location="plantuml.jar"/>
-  <property name="bin" location="GraphViz-${version}"/>
+  <property name="version" value="2.50.0"/>
+  <property name="plantuml" location="plantuml-1.2021.16.jar"/>
+  <property name="target" location="./GraphViz_dest/GraphViz-${version}"/>
+  <property name="source" location="./GraphViz_source/graphviz-install-${version}-win32/bin"/>
   <property name="dist" location="dist"/>
 
 
   <target name="test" description = "test small distribution">
 	<exec executable="setx.exe">
-		<arg line="GRAPHVIZ_DOT .\GraphViz-${version}\dot.exe"/>
+		<arg line="GRAPHVIZ_DOT .\GraphViz_dest\GraphViz-${version}\dot.exe"/>
 	</exec>	
 	<java jar="${plantuml}" fork="true" />
   </target>
 
-  <target name="dist" description="generate the distribution">
-	<zip destfile="${dist}/graphviz_lite_${version}_win32.zip" basedir="${bin}" />
+  <target name="dist" depends="clean" description="generate the distribution">
+	<zip destfile="${dist}/graphviz_lite_${version}_win32.zip" basedir="${target}" />
+  </target>
+
+  <target name="createDist" description="copy the relevant files">
+    <mkdir dir="${target}"/>
+	<copy file="${source}/cdt.dll" todir="${target}"/>
+	<copy file="${source}/cgraph.dll" todir="${target}"/>
+	<copy file="${source}/dot.exe" todir="${target}"/>
+	<copy file="${source}/expat.dll" todir="${target}"/>
+	<copy file="${source}/gvc.dll" todir="${target}"/>
+	<copy file="${source}/gvplugin_core.dll" todir="${target}"/>
+	<copy file="${source}/gvplugin_dot_layout.dll" todir="${target}"/>
+	<copy file="${source}/pathplan.dll" todir="${target}"/>
+	<copy file="${source}/vcruntime140.dll" todir="${target}"/>
+	<copy file="${source}/xdot.dll" todir="${target}"/>
+	<copy file="LICENSE" todir="${target}"/>
+	<exec executable="${target}/dot.exe">
+		<arg line="-c"/>
+	</exec>
   </target>
 
   <target name="clean"
