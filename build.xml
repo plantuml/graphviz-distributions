@@ -2,8 +2,8 @@
   <description>
 	build a small GraphViz zip
   </description>
-  <property name="version" value="2.50.0"/>
-  <property name="plantuml" location="plantuml-1.2021.16.jar"/>
+  <property name="version" value="6.0.1"/>
+  <property name="plantuml" location="plantuml-nodot.1.2022.8.jar"/>
   <property name="target" location="./GraphViz_dest/GraphViz-${version}"/>
   <property name="source" location="./GraphViz_source/graphviz-install-${version}-win32/bin"/>
   <property name="dist" location="dist"/>
