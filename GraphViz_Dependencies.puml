@@ -3,13 +3,14 @@
 file dot.exe
 component gvc.dll
 component gvplugin_dot_layout.dll
-component expat.dll
+component libexpat.dll
 component gvplugin_core.dll
 component vcruntime140.dll
 component cgraph.dll
 component pathplan.dll
 component xdot.dll
 component cdt.dll
+component zlib1.dll
 file config6
 
 dot.exe --> gvc.dll
@@ -19,7 +20,8 @@ dot.exe --> vcruntime140.dll
 gvc.dll --> cgraph.dll
 gvc.dll --> pathplan.dll
 gvc.dll --> xdot.dll
-gvc.dll --> expat.dll
+gvc.dll --> libexpat.dll
+gvc.dll --> zlib1.dll
 gvc.dll --> cdt.dll
 gvc.dll --> vcruntime140.dll
 gvc.dll ..> config6 : loads plugins
@@ -28,7 +30,7 @@ gvc.dll ..> config6 : loads plugins
 cgraph.dll --> cdt.dll
 cgraph.dll --> vcruntime140.dll
 
-expat.dll --> vcruntime140.dll
+libexpat.dll --> vcruntime140.dll
 
 pathplan.dll --> vcruntime140.dll
 
@@ -48,5 +50,6 @@ gvplugin_dot_layout.dll --> cdt.dll
 gvplugin_dot_layout.dll --> vcruntime140.dll
 config6 ..> gvplugin_dot_layout.dll : dot plugin
 
+zlib1.dll --> vcruntime140.dll
 
 @enduml
