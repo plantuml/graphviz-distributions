@@ -2,8 +2,8 @@
   <description>
 	build a small GraphViz zip
   </description>
-  <property name="version" value="6.0.1"/>
-  <property name="plantuml" location="plantuml-nodot.1.2022.8.jar"/>
+  <property name="version" value="12.2.1"/>
+  <property name="plantuml" location="plantuml-lgpl-1.2025.0.jar"/>
   <property name="target" location="./GraphViz_dest/GraphViz-${version}"/>
   <property name="source" location="./GraphViz_source/graphviz-install-${version}-win32/bin"/>
   <property name="dist" location="dist"/>
@@ -25,13 +25,14 @@
 	<copy file="${source}/cdt.dll" todir="${target}"/>
 	<copy file="${source}/cgraph.dll" todir="${target}"/>
 	<copy file="${source}/dot.exe" todir="${target}"/>
-	<copy file="${source}/expat.dll" todir="${target}"/>
+	<copy file="${source}/libexpat.dll" todir="${target}"/>
 	<copy file="${source}/gvc.dll" todir="${target}"/>
 	<copy file="${source}/gvplugin_core.dll" todir="${target}"/>
 	<copy file="${source}/gvplugin_dot_layout.dll" todir="${target}"/>
 	<copy file="${source}/pathplan.dll" todir="${target}"/>
 	<copy file="${source}/vcruntime140.dll" todir="${target}"/>
 	<copy file="${source}/xdot.dll" todir="${target}"/>
+	<copy file="${source}/zlib1.dll" todir="${target}"/>
 	<copy file="LICENSE" todir="${target}"/>
 	<exec executable="${target}/dot.exe">
 		<arg line="-c"/>
